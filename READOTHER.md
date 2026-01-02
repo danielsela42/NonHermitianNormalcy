@@ -11,7 +11,7 @@ Although the specific Hamiltonians explored here ultimately **do not exhibit a n
 For non-Hermitian Hamiltonians $ H $, direct diagonalization can be expensive or impractical in large systems. A motivating idea behind this project was:
 
 > **Can spectral properties (e.g. density of states) be inferred from moments of the form**
-> \[\mathrm{tr}(H^m H^{\dagger n})\]
+> $$\mathrm{tr}(H^m H^{\dagger n})$$
 > **without full diagonalization?**
 
 When $ H $ is Hermitian, these moments can be computed **combinatorially**, by counting closed loops on the lattice with direction-dependent hopping amplitudes. However, the typically distinct eigenspaces of non-Hermitian Hamiltonians poses a challenge to this combinatorial approach. Therefore, in this attempt, we replace $ H^\dagger $ with the matrix $ H' $ that shares eigenvectors with H but with conjugate eigenvalues. We attempted to identify a class of non-Hermitian Hamiltonians, some of which may have skin effect, that would permit a combinatorial closed loop counting approach to computing the spectral moments.
@@ -72,14 +72,14 @@ Each file performs the following diagnostic checks:
 1. **Hamiltonian construction** with asymmetric hopping
 2. **Exact diagonalization** using NumPy
 3. **Reconstruction of a conjugate-eigenvalue Hamiltonian**
-   \[
+   $$
    H' = P \overline{D} P^{-1}
-   \]
+   $$
 4. **Commutating verification**
-   \[
+   $$
    [H, H'] = 0
-   \]
-   
+   $$
+
 5. **Hopping consistency checks**
 
    * Ensures no new matrix elements appear under conjugation
