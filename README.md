@@ -8,13 +8,13 @@ Although the specific Hamiltonians explored here ultimately **do not exhibit a n
 
 ## Scientific Motivation
 
-For non-Hermitian Hamiltonians <img src="https://rawgit.com/in	git@github.com:danielsela42/NonHermitianNormalcy/main/svgs/5fde7705b9890304582d9021bfb5160a.svg?invert_in_darkmode" align=middle width=14.99998994999999pt height=22.465723500000017pt/>, direct diagonalization can be expensive or impractical in large systems. A motivating idea behind this project was:
+For non-Hermitian Hamiltonians $ H $, direct diagonalization can be expensive or impractical in large systems. A motivating idea behind this project was:
 
 > **Can spectral properties (e.g. density of states) be inferred from moments of the form**
-> <p align="center"><img src="https://rawgit.com/in	git@github.com:danielsela42/NonHermitianNormalcy/main/svgs/dd46d1afc94698b8f4cea7e59b7227b2.svg?invert_in_darkmode" align=middle width=83.07855765000001pt height=18.88772655pt/></p>
+> $$\mathrm{tr}(H^m H^{\dagger n})$$
 > **without full diagonalization?**
 
-When <img src="https://rawgit.com/in	git@github.com:danielsela42/NonHermitianNormalcy/main/svgs/5fde7705b9890304582d9021bfb5160a.svg?invert_in_darkmode" align=middle width=14.99998994999999pt height=22.465723500000017pt/> is Hermitian, these moments can be computed **combinatorially**, by counting closed loops on the lattice with direction-dependent hopping amplitudes. However, the typically distinct eigenspaces of non-Hermitian Hamiltonians poses a challenge to this combinatorial approach. Therefore, in this attempt, we replace <img src="https://rawgit.com/in	git@github.com:danielsela42/NonHermitianNormalcy/main/svgs/1ef2080f67f60c3c050d205e3df6135c.svg?invert_in_darkmode" align=middle width=21.02739704999999pt height=27.91243950000002pt/> with the matrix <img src="https://rawgit.com/in	git@github.com:danielsela42/NonHermitianNormalcy/main/svgs/2a01fb54eb9d47b4e26dce39b616d11c.svg?invert_in_darkmode" align=middle width=18.78993104999999pt height=24.7161288pt/> that shares eigenvectors with H but with conjugate eigenvalues. We attempted to identify a class of non-Hermitian Hamiltonians, some of which may have skin effect, that would permit a combinatorial closed loop counting approach to computing the spectral moments.
+When $ H $ is Hermitian, these moments can be computed **combinatorially**, by counting closed loops on the lattice with direction-dependent hopping amplitudes. However, the typically distinct eigenspaces of non-Hermitian Hamiltonians poses a challenge to this combinatorial approach. Therefore, in this attempt, we replace $ H^\dagger $ with the matrix $ H' $ that shares eigenvectors with H but with conjugate eigenvalues. We attempted to identify a class of non-Hermitian Hamiltonians, some of which may have skin effect, that would permit a combinatorial closed loop counting approach to computing the spectral moments.
 
 If successful, this would allow:
 
@@ -32,7 +32,7 @@ A key objective was:
 
 * To determine whether the presence (or absence) of the skin effect could be inferred **purely from moments**, without computing eigenstates explicitly.
 
-However, for the Hamiltonians explored here, <img src="https://rawgit.com/in	git@github.com:danielsela42/NonHermitianNormalcy/main/svgs/2a01fb54eb9d47b4e26dce39b616d11c.svg?invert_in_darkmode" align=middle width=18.78993104999999pt height=24.7161288pt/> had a different combinatorially structure than <img src="https://rawgit.com/in	git@github.com:danielsela42/NonHermitianNormalcy/main/svgs/5fde7705b9890304582d9021bfb5160a.svg?invert_in_darkmode" align=middle width=14.99998994999999pt height=22.465723500000017pt/>, leading to difficulty applying the loop counting method.
+However, for the Hamiltonians explored here, $ H' $ had a different combinatorially structure than $ H $, leading to difficulty applying the loop counting method.
 
 ---
 
