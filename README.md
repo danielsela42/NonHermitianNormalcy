@@ -1,6 +1,6 @@
 # Non-Hermitian Lattice Hamiltonians (Exploratory Work)
 
-This repository contains **exploratory / scratch work** investigating classes of **non-Hermitian lattice Hamiltonians** on 2D lattices (checkerboard, honeycomb, kagome). The goal was to identify structural patterns that would allow **spectral information**—in particular the **density of states**—to be estimated from **operator moments** alone.
+This repository contains **exploratory / scratch work** investigating classes of **non-Hermitian lattice Hamiltonians** on 2D lattices (square, checkerboard, honeycomb, kagome). The goal was to identify structural patterns that would allow **spectral information**—in particular the **density of states**—to be estimated from **operator moments** alone.
 
 Although the specific Hamiltonians explored here ultimately **do not exhibit a non-Hermitian skin effect**, the code documents systematic tests of normality, hopping structure, and spectral consistency that were part of this search.
 
@@ -39,6 +39,12 @@ However, for the Hamiltonians explored here, ( H' ) had a different combinatoria
 ---
 
 ## Lattice Models Implemented
+
+### Square Lattice (`square_attempt.py`)
+
+* Two sites per unit cell
+* Distinct hoppings in x and y directions
+* Periodic boundary conditions
 
 ### Checkerboard Lattice (`checkerboard_attempt.py`)
 
@@ -110,6 +116,7 @@ pip install numpy
 Each file is self-contained:
 
 ```bash
+python square_attempt.py
 python checkerboard_attempt.py
 python honeycomb_attempt.py
 python kagome_attempt.py
