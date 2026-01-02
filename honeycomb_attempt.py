@@ -35,7 +35,7 @@ def symmetric_honeycomb(m, n, ihop, ihop_opp, ohop1, ohop1_opp, ohop2, ohop2_opp
 # Test the symmetric_honeycomb function and the normalcy condition
 if __name__ == "__main__":
     #  Create a symmetric honeycomb Hamiltonian
-    H = symmetric_honeycomb(5, 5, 2, 1, 2, 1)
+    H = symmetric_honeycomb(5, 5, 2, 1, 2, 1, 2, 1)
     
     # Compute eigenvalues and eigenvectors
     eigvals, eigvects = np.linalg.eig(H)
