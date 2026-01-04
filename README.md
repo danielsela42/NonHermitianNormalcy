@@ -2,13 +2,11 @@
 
 This repository contains **exploratory / scratch work** investigating classes of **non-Hermitian lattice Hamiltonians** on 2D lattices (square, checkerboard, honeycomb, kagome). The goal was to identify structural patterns that would allow **spectral information**—in particular the **density of states**—to be estimated from **operator moments** alone.
 
-Although the specific Hamiltonians explored here ultimately **do not exhibit a non-Hermitian skin effect**, the code documents systematic tests of normality, hopping structure, and spectral consistency that were part of this search.
-
 ---
 
 ## Scientific Motivation
 
-For non-Hermitian Hamiltonians $` H `$, direct diagonalization can be expensive or impractical in large systems. A motivating idea behind this project was:
+For non-Hermitian Hamiltonians $` H `$, direct diagonalization can be expensive or impractical in large systems. However, it is possible to approximate the density of states from the mixed moments of the Hamiltonian. Moreover, it may be possible to predict skin effect on from the first few moments. Therefore, we asked the following question:
 
 > **Can spectral properties (e.g. density of states) be inferred from moments of the form**
 > ```math
@@ -16,7 +14,7 @@ For non-Hermitian Hamiltonians $` H `$, direct diagonalization can be expensive 
 > ```
 > **without full diagonalization?**
 
-When $` H `$ is Hermitian, these moments can be computed **combinatorially**, by counting closed loops on the lattice with direction-dependent hopping amplitudes. However, the typically distinct eigenspaces of non-Hermitian Hamiltonians poses a challenge to this combinatorial approach. Therefore, in this attempt, we replace $` H^\dagger `$ with the matrix $` H' `$ that shares eigenvectors with H but with conjugate eigenvalues. We attempted to identify a class of non-Hermitian Hamiltonians, some of which may have skin effect, that would permit a combinatorial closed loop counting approach to computing the spectral moments.
+When $` H `$ is Hermitian, these moments can be computed **combinatorially**, by counting closed loops on the lattice with direction-dependent hopping amplitudes. However, the typically distinct eigenspaces of non-Hermitian Hamiltonians and their Hermitian conjugates pose a challenge to this combinatorial approach. Therefore, in this attempt, we replace $` H^\dagger `$ with the matrix $` H' `$ that shares eigenvectors with H but with conjugate eigenvalues. In this way, the spectrum is preserved. If we additionally have that $`H`$ and $`H'`$ correspond to the same undirected graph, then the loop counting can be performed without issue to esimate the moments of the density of states. Hence, we attempted to identify a class of non-Hermitian Hamiltonians, some of which may have skin effect, that would permit a combinatorial closed loop counting approach to computing the spectral moments.
 
 If successful, this would allow:
 
@@ -28,7 +26,7 @@ If successful, this would allow:
 
 ## Skin Effect and Why It Matters
 
-The **non-Hermitian skin effect** refers to the accumulation of eigenstates at system boundaries due to asymmetric hopping. It is a hallmark of genuinely non-Hermitian physics and cannot be captured by Hermitian or normal operators.
+The **non-Hermitian skin effect** refers to the accumulation of eigenstates at system boundaries due to asymmetric hopping. It is a hallmark of genuinely non-Hermitian physics and cannot be captured by Hermitian or normal operators. A simple criteria for the skin effect is whether the spectrum in &#8450; lies on a $`1`$-dimensional curve or a $`2`$-dimensional subspace.
 
 A key objective was:
 
@@ -87,7 +85,7 @@ Each file performs the following diagnostic checks:
    * Ensures no new matrix elements appear under conjugation
    * Confirms loop structure preservation
 
-These tests were used to rule out candidate Hamiltonians that *look* non-Hermitian but behave spectrally like Hermitian ones.
+These tests were used to rule out candidate Hamiltonians $`H`$ for which $`H'`$ does not share the same combinatorial structure.
 
 ---
 
@@ -97,7 +95,7 @@ Even though the original goal was not achieved, this work:
 
 * Provides reusable lattice construction templates
 * Demonstrates systematic testing of non-Hermitian normality
-* Helps narrow the search space for genuinely normal non-Hermitian Hamiltonians with skin effect
+* Helps narrow the search space for non-Hermitian Hamiltonians with skin effect for which the moments of the density of states could be computed combinatorially.
 
 Negative results are informative in exploratory research, and this repository documents one such path.
 
